@@ -8,6 +8,8 @@ app.use(morgan("dev"));
 
 app.use(express.json());
 
+app.disable("x-powered-by");
+
 app.post("/robot", validate);
 
 export default app;
