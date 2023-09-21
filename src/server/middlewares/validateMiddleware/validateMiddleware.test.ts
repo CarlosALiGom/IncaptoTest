@@ -1,6 +1,10 @@
 import { type Response, type NextFunction } from "express";
 import { type CustomRequest } from "../../types";
 import validate from "./validateMiddleware";
+import {
+  responseMessage,
+  responseStatusCode,
+} from "../../utils/responseData/responseData";
 
 beforeEach(() => {
   jest.clearAllMocks();
@@ -32,9 +36,8 @@ describe("Given a validate middleware", () => {
         },
       };
 
-      const expectedErrorStatus = 400;
-      const expectedErrorMessage =
-        "Body request must contain a commands property with a string chain with only 'L', 'R' and 'M' characters";
+      const expectedErrorStatus = responseStatusCode.badRequest;
+      const expectedErrorMessage = responseMessage.badRequest;
 
       const res: Partial<Response> = {
         status: jest.fn().mockReturnThis(),

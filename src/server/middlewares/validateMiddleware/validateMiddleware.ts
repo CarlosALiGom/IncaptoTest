@@ -1,9 +1,13 @@
 import createDebug from "debug";
 import { type NextFunction, type Response } from "express";
 import { type CustomRequest } from "../../types";
+import {
+  responseMessage,
+  responseStatusCode,
+} from "../../utils/responseData/responseData";
 
 const debug = createDebug(
-  "incaptoTest-api:servermiddleWares:validateMiddleware",
+  "incaptoTest-api:server:middleWares:validateMiddleware",
 );
 
 const validate = (req: CustomRequest, res: Response, next: NextFunction) => {
@@ -13,9 +17,8 @@ const validate = (req: CustomRequest, res: Response, next: NextFunction) => {
 
   if (!body.commands || !allowedChars.test(req.body.commands)) {
     debug("Invalid request format");
-    return res.status(400).json({
-      error:
-        "Body request must contain a commands property with a string chain with only 'L', 'R' and 'M' characters",
+    return res.status(responseStatusCode.badRequest).json({
+      error: responseMessage.badRequest,
     });
   }
 
