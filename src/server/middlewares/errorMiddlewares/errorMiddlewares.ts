@@ -33,7 +33,9 @@ export const generalError = (
 
   const statusCode = error.statusCode || responseStatusCode.internalServerError;
 
-  const message = error.message || responseMessage.internalServerError;
+  const message = error.statusCode
+    ? error.message
+    : responseMessage.internalServerError;
 
   res.status(statusCode).json({ message });
 };
