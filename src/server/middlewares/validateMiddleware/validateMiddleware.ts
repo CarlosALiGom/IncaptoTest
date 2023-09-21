@@ -4,7 +4,7 @@ import { type CustomRequest } from "../../types";
 import {
   responseMessage,
   responseStatusCode,
-} from "../../utils/responseData/responseData";
+} from "../../utils/responseData/responseData.js";
 
 const debug = createDebug(
   "incaptoTest-api:server:middleWares:validateMiddleware",
