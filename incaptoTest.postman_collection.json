@@ -1,0 +1,81 @@
+{
+  "info": {
+    "_postman_id": "139bddb2-f32b-4e68-8542-edca34561fa5",
+    "name": "incaptoTest",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "27032472"
+  },
+  "item": [
+    {
+      "name": "/robot",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"commands\": \"LMLMMRMLMM\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/robot",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["robot"]
+        }
+      },
+      "response": [{ "output": "8|6|S" }]
+    },
+    {
+      "name": "/robot (bad request)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"commands\": \"LMLMMRM55\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4000/robot",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["robot"]
+        }
+      },
+      "response": [
+        {
+          "error": "Body request must contain a commands property with a string chain with only 'L', 'R' and 'M' characters"
+        }
+      ]
+    },
+    {
+      "name": "/robot (endpoint not found)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4000/robot",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["robot"]
+        }
+      },
+      "response": [
+        {
+          "message": "Not found"
+        }
+      ]
+    }
+  ]
+}
