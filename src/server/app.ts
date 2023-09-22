@@ -1,11 +1,10 @@
 import express from "express";
 import morgan from "morgan";
-import validate from "./middlewares/validateMiddleware/validateMiddleware.js";
 import {
   generalError,
   notFoundError,
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
-import robotController from "./controllers/robot/robotController.js";
+import robotRouter from "./routers/robotRouter/robotRouter.js";
 
 const app = express();
 
@@ -15,7 +14,7 @@ app.use(express.json());
 
 app.disable("x-powered-by");
 
-app.post("/robot", validate, robotController);
+app.use("/robot", robotRouter);
 
 app.use(notFoundError);
 
