@@ -43,8 +43,6 @@ const moveRobot = (
     case "E":
       currentPosition.x = checkLimit(currentPosition.x + 1);
       return currentPosition;
-    default:
-      break;
   }
 };
 

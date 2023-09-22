@@ -20,7 +20,8 @@
           {
             "capIsNewExceptions": ["Router"]
           }
-        ]
+        ],
+        "default-case": "off"
       }
     }
   ],
