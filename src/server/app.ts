@@ -5,6 +5,7 @@ import {
   generalError,
   notFoundError,
 } from "./middlewares/errorMiddlewares/errorMiddlewares.js";
+import robotController from "./controllers/robot/robotController.js";
 
 const app = express();
 
@@ -14,7 +15,7 @@ app.use(express.json());
 
 app.disable("x-powered-by");
 
-app.post("/robot", validate);
+app.post("/robot", validate, robotController);
 
 app.use(notFoundError);
 

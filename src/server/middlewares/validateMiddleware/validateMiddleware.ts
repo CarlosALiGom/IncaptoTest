@@ -15,7 +15,7 @@ const validate = (req: CustomRequest, res: Response, next: NextFunction) => {
 
   const { body } = req;
 
-  if (!body.commands || !allowedChars.test(req.body.commands)) {
+  if (!body.commands || !allowedChars.test(body.commands)) {
     debug("Invalid request format");
     return res.status(responseStatusCode.badRequest).json({
       error: responseMessage.badRequest,

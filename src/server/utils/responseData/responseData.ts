@@ -1,7 +1,7 @@
 import {
   type ResponseMessageStructure,
   type ResponseStatusCodeStructure,
-} from "../types";
+} from "../types/responseDataTypes";
 
 export const responseStatusCode: ResponseStatusCodeStructure = {
   ok: 200,
