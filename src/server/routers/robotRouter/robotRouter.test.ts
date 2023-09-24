@@ -22,7 +22,7 @@ describe("Given a POST '/robot' endpoint", () => {
   });
 
   describe("When it receives a request with an invalid body format", () => {
-    test("Then it should reply with a 400 status and a response body with a property named output", async () => {
+    test("Then it should reply with a 400 status and a response body with a property error pointing an error message", async () => {
       const expectedMessage = responseMessage.badRequest;
 
       const response = await request(app)
