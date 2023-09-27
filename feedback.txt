@@ -1,0 +1,23 @@
+En este archivo se pondrá el feedback general, además de los comentarios añadidos en el código con el flag [FEEDBACK]({feedback_type})
+
+Mejoras:
+1- Añadir archivo .env.sample con la estructura necesaria para el archivo .env
+2- Se ha planteado un inicio de separación de responsabilidades pero no se ha ejecutado correctamente del todo. Por ejemplo en el caso de "utils"
+donde se ha englobado en el mismo dominio la difinición de los tipos a usar en la aplicacion con las funcionalidades del robot. 
+Una mejor estructuración del proyecto habría sido por ejemplo separar los "robotTools" como "services" a usar desde el controlador.
+3- Se debería haber separado los test en su propio dominio
+
+
+Errores:
+1- No se ha definido un modelo para el robot
+2- No se ha definido un modelo para el grid
+3- No se ha usado try/catch en ningun punto de la aplicación
+4- El formato del outpu no cumple los requisitos descritos en la prueba
+5- El formato del input no cumple los requisitos descritos en la prueba
+
+Positivo:
+1- Project README muy completo
+2- Implementación de test unitarios
+3- Buena separación de responsabilidades en el controlador
+4- Correcto uso del .gitignore
+5- Buena implementación del control de errores y el testeo de esta

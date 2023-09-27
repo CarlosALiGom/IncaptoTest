@@ -3,6 +3,8 @@ import {
   type ResponseStatusCodeStructure,
 } from "../types/responseDataTypes";
 
+
+//[FEEDBACK](correcto): Me gusta que hayas implementado tipos de dato para las respuestas.
 export const responseStatusCode: ResponseStatusCodeStructure = {
   ok: 200,
   badRequest: 400,
