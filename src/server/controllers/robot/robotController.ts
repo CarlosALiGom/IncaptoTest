@@ -13,6 +13,8 @@ const robotController = (
 ) => {
   const { commands } = req.body;
 
+  //[FEEDBACK](mejora): Una mejor implementación habría sido definir un servicio que se encargara de mover el robot con un nombre descriptivo
+  // no tiene mucho sentido mandar la incialización del robot como parametro en el controlador.
   const finalRobotState = robotMapping(initialRobotState(), commands);
 
   const output = `${finalRobotState.position.x}|${finalRobotState.position.y}|${finalRobotState.orientation}`;
